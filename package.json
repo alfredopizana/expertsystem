@@ -1,0 +1,26 @@
+{
+  "name": "expertsystem",
+  "version": "1.0.0",
+  "description": "This app is designed to solve complex problems by reasoning about knowledge.",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfredopizana/expertsystem.git"
+  },
+  "author": "Alfredo Pizaña",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfredopizana/expertsystem/issues"
+  },
+  "homepage": "https://github.com/alfredopizana/expertsystem#readme"
+}
