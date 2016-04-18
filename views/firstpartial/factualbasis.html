@@ -1,0 +1,76 @@
+<div class="row">
+	<div class="col s2"> 
+		<h7>Antecedents</h7>
+		<ul>
+			<li ng-repeat="_item in factualBasisAntecedents ">
+				{{_item.shortName}}
+			</li>
+			<li ng-show="!factualBasisAntecedents.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+	<div class="col s2"> 
+		<h7>Intermediate Conclusions</h7>
+		<ul>
+			<li ng-repeat="_item in factualBasisIntermediateConclusions ">
+				{{_item.shortName}}
+			</li>
+			<li ng-show="!factualBasisIntermediateConclusions.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+	<div class="col s2"> 
+		<h7>Conclusions</h7>
+		<ul>
+			<li ng-repeat="_item in factualBasisConclusion ">
+				{{_item.shortName}}
+			</li>
+			<li ng-show="!factualBasisConclusion.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+	<div class="col s2"> 
+		<h7>Pending to be Evaluated</h7>
+		<ul>
+			<li ng-repeat="_item in listOfAtomsToBeEvaluated" ng-class="_item.typeOfSection == 'Antecedent' ? 'red' : _item.typeOfSection == 'IntermediateConclusion' ? 'green' : 'blue'">
+				{{_item.shortName}}
+			</li>
+			<li ng-show="!listOfAtomsToBeEvaluated.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+	<div class="col s2"> 
+		<h7>Evaluated</h7>
+		<ul>
+			<li ng-repeat="_item in listOfEvaluatedAtoms " ng-class="_item.typeOfSection == 'Antecedent' ? 'red' : _item.typeOfSection == 'IntermediateConclusion' ? 'green' : 'blue'" >
+				{{_item.shortName}}
+			</li>
+			<li ng-show="!listOfEvaluatedAtoms.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+	<div class="col s2"> 
+		<h7>Rules</h7>
+		<ul>
+			<li ng-repeat="rule in rules " >
+				<span ng-repeat="atom in rule.antecedents " >
+					{{atom.sign==false ? "¬" : " " }}{{atom.shortName}}
+					<span>{{$last ? '' : ' ^ '}}	</span>
+				</span>
+				<span> - > </span>
+				<span ng-repeat="atom in rule.conclusions " >
+					{{atom.sign==false ? "¬" : " " }}{{atom.shortName}}
+					<span>{{$last ? '' : ' ^ '}}	</span>
+				</span>
+			</li>
+			<li ng-show="!copyOfRules.length" >
+				Empty
+			</li>
+		</ul>
+	</div>
+</div>

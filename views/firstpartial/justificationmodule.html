@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col s12">
+		<h5>Acts base</h5>
+
+		<table class="responsive-table">
+			<thead>
+				<tr>
+					<th data-field="id">Short Name</th>
+					<th data-field="name">Value</th>
+					<th data-field="price">Origin</th>
+					<th data-field="price">Type of Section</th>
+					<th data-field="price">Explanation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="_item in baseFacts ">
+					<td>{{_item.shortName}}</td>
+					<td>{{_item.sign}}</td>
+					<td>{{_item.origin}}</td>
+					<td>{{_item.typeOfSection}}</td>
+					<td><span ng-class="_item.explanation != '' ? 'chip blue' : '' ">{{_item.explanation}}<span></td>
+				</tr>
+			</tbody>
+		</table>	
+		
+	</div> 
+</div>

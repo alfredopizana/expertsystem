@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col s6">
+		<h3>Inference Engine</h3>
+		<button class="btn waves-effect waves-light green accent-4" ng-click="startInferenceEngine()">Start</button>
+	  	<button class="btn waves-effect waves-light yellow accent-3" ng-click="getExplanation()">Explanation</button>
+	</div>
+	<div class="col s6" ng-show="evaluatedAtom.shortName">
+		<h5 ng-class="evaluatedAtom.typeOfSection == 'Antecedent' ? 'red' : evaluatedAtom.typeOfSection == 'IntermediateConclusion' ? 'green' : evaluatedAtom.typeOfSection == 'Conclusion' ? 'blue' : ''">Atom : {{evaluatedAtom.shortName}}</h5>
+		<button class="btn waves-effect waves-light green accent-3" ng-click="evaluateAtom(true)">Si</button>
+	  	<button class="btn waves-effect waves-light red accent-3"  ng-click="evaluateAtom(false)">No</button>
+	</div>
+</div>

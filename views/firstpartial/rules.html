@@ -1,0 +1,88 @@
+<div style="position:relative; height:70px;" >
+	<h4><i class="material-icons">list</i>Rules</h4>
+	<div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right:0px; top:0px">
+		<a class="btn-floating btn-large waves-light blue">
+			<i class="large material-icons">list</i>
+		</a>
+		<ul>
+			<li><a class="btn-floating waves-effect waves-light teal accent-3" ng-click="setDefaultRules()"><i class="material-icons">replay</i></a></li>
+			<li><a class="btn-floating waves-effect waves-light red accent-3" ng-click="clearRules()"><i class="material-icons">not_interested</i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h5>Create Rules</h5>
+		<ul class="collection with-header">
+	        <li class="collection-header"><h4>Actual Atoms</h4></li>
+	        <li class="collection-item" ng-repeat="atomo in atoms">
+	        	<div >
+	        		{{atomo.shortName}}
+	        		<a href="#!" class="secondary-content" ng-click="addAtomToConclusion(atomo)">
+		        		<i class="material-icons">fast_forward</i>
+		        	</a>
+	        		<a href="#!" class="secondary-content" ng-click="addAtomToSentence(atomo)">
+		        		<i class="material-icons">fast_rewind</i>
+		        	</a>
+		        </div>
+	        </li>
+	     </ul>
+		<!-- Switch -->
+		<div class="switch">
+			<label>
+				Positive
+				<input type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="temporalStatus" ng-init="temporalStatus=false">
+				<span class="lever"></span>
+				Negative
+			</label>
+		</div>
+		<br>
+		<button class="btn waves-effect waves-light" ng-click="saveRule()">Save Rule
+			<i class="material-icons right">input</i>
+		</button>
+	</div>
+	<!-- Preview -->
+	<div class="col s6">
+		<h5>Preview</h5>
+		<div style="    display: inline-block;" ng-repeat="t in temporalRule[0].antecedents">
+			<div class="chip">
+				<div class="chip blue" >{{t.sign==true ? "¬" : "." }}</div> {{t.shortName}} 
+				<i class="material-icons" ng-click="removeSentence($index)">close</i>
+			</div>
+			<span>{{$last ? '' : ' * '}}	</span>
+		</div>
+		<span ng-show="temporalRule[0].antecedents.length || temporalRule[0].conclusions.length" class="red-text text-accent-3"> - ></span>
+		<div style="    display: inline-block;" ng-repeat="t in temporalRule[0].conclusions">
+			<div class="chip">
+				<div class="chip blue" >{{t.sign==true ? "¬" : "." }}</div> {{t.shortName}} 
+				<i class="material-icons" ng-click="removeConclusion($index)">close</i>
+			</div>
+			<span>{{$last ? '' : ' * '}}	</span>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h5>Rules</h5>
+			<ul class="collection"	>
+				<li class="collection-item avatar" ng-repeat="rule in rules">
+					<div style="    display: inline-block;" ng-repeat="t in rule.antecedents">
+						<div class="chip">
+							<div class="chip blue" >{{t.sign==true ? "¬" : "." }}</div> {{t.shortName}} 
+						</div>
+						<span>{{$last ? '' : ' * '}}	</span>
+					</div>
+					<span class="red-text text-accent-3"> - ></span>
+					<div style="    display: inline-block;" ng-repeat="t in rule.conclusions">
+						<div class="chip">
+							<div class="chip blue" >{{t.sign==true ? "¬" : "." }}</div> {{t.shortName}} 
+						</div>
+						<span>{{$last ? '' : ' * '}}	</span>
+					</div>
+				</li>
+				<li ng-show="!rules.length" class="collection-item avatar">
+					There are no rules
+				</li>
+			</ul>
+	</div>
+</div>

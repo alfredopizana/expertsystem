@@ -1,0 +1,48 @@
+<div style="position:relative; height:70px;" >
+	<h4><i class="material-icons">album</i>Atoms</h4>
+	<div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right:0px; top:0px">
+		<a class="btn-floating btn-large waves-light blue">
+			<i class="large material-icons">album</i>
+		</a>
+		<ul>
+			<li><a class="btn-floating waves-effect waves-light teal accent-3" ng-click="setDefaultAtoms()"><i class="material-icons">replay</i></a></li>
+			<li><a class="btn-floating waves-effect waves-light red accent-3" ng-click="clearAtoms()"><i class="material-icons">not_interested</i></a></li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+			<h5>New Atom</h5>
+			<div class="input-field col s12">
+				<input id="identifier" type="text" class="validate" ng-model="newAtom.shortName">
+				<label for="identifier">identifier</label>
+			</div>
+			<div class="input-field col s12">
+				<input id="name" type="text" class="validate" ng-model="newAtom.name">
+				<label for="name">Name</label>
+			</div>
+			<button class="btn waves-effect waves-light" ng-click="saveAtom()">Enviar
+			    <i class="material-icons right">send</i>
+		  	</button>
+	</div>
+	<div class="col s6">
+		<h5>List of Atoms</h5>
+		<ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+			<li ng-repeat="atom in atoms">
+				<div class="collapsible-header"><i class="material-icons">album</i>{{atom.shortName}}</div>
+				<div class="collapsible-body" style="display: none;"><p>{{atom.name}}</p></div>
+
+			</li>
+			<li ng-show="!atoms.length" class="">
+					<div class="collapsible-header">EmptyList</div>
+			</li>
+		</ul>
+	</div>	
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    $('.collapsible').collapsible({
+	      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+	    });
+	  });
+	</script>
+</div>

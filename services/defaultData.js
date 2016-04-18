@@ -51,8 +51,8 @@ app.factory('defaultData', function () {
 					shortName:"Ll"
 				},
 				{
-					name:"M",
-					shortName:"Mojado"
+					name:"Mojado",
+					shortName:"M"
 				},
 				{
 					name:"Vacaciones",

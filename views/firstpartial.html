@@ -1,30 +1,24 @@
 <div >
-	<h1>Sistema Experto</h1>
-		<button class="btn waves-effect waves-light" ng-click="clearAtoms()">Limpiar Atomos
-			<i class="material-icons right">send</i>
-		</button>
-		<button class="btn waves-effect waves-light" ng-click="clearRules()">Limpiar Reglas
-			<i class="material-icons right">send</i>
-		</button>
-		<button class="btn waves-effect waves-light" ng-click="setAtoms()">Set Atomos
-			<i class="material-icons right">send</i>
-		</button>
-		<button class="btn waves-effect waves-light" ng-click="setRules()">Set Reglas
-			<i class="material-icons right">send</i>
-		</button>
-		<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-      <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>
-	<div ng-repeat="atom in atoms">
-		{{atom}}
-	</div>
+	<h1>Expert System</h1>
+
+	<h5>Knowledgebase + CRUD</h5>
+	<!-- Atoms -->
+	<div ng-include="'views/firstpartial/atoms.html'"></div>
+	
+	<!-- Rules -->
+	<div ng-include="'views/firstpartial/rules.html'"></div>
+
+	<!-- Factual Basis -->
+	<div ng-include="'views/firstpartial/introduction.html'"></div>
+
+	<!-- Factual Basis -->
+	<div ng-include="'views/firstpartial/factualbasis.html'"></div>
+
+	<!-- Inference Engine -->
+	<div ng-include="'views/firstpartial/inferenceengine.html'"></div>
+
+	<!-- Justification Module -->
+	<div ng-include="'views/firstpartial/justificationmodule.html'"></div>
+
 </div>
 

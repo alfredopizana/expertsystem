@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
-	<title>Sistema Experto</title>
+	<title>Expert System</title>
 
 	<!-- Styles -->
 	<link href="css/material_icons.css" rel="stylesheet">
@@ -13,6 +13,9 @@
     <!-- Libraries -->
 	<script type="text/javascript" src="js/lib/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/lib/materialize.min.js"></script>
+
+	
+	
 	<script type="text/javascript" src="js/lib/angular.min.js"></script>
 	<script type="text/javascript" src="js/lib/angular-route.min.js"></script>
 	<script type="text/javascript" src="js/lib/angular-local-storage.min.js"></script>
@@ -30,11 +33,10 @@
 	<!--Controllers -->
 	<script type="text/javascript" src="controllers/FirstPartialController.js"></script>
 </head>
-
 <body>
 	<nav class="light-blue lighten-1" ng-include="'views/partials/navbar.html'"></nav>
 	<div class="container" ng-view></div>
 	<footer class="page-footer light-blue lighten-1" ng-include="'views/partials/footer.html'"></footer>
+	<script type="text/javascript" src="js/lib/materialize-scripts.js"></script>
 </body>
-
 </html>
