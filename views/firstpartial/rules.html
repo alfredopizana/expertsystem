@@ -15,13 +15,13 @@
 		<h5>Create Rules</h5>
 		<ul class="collection with-header">
 	        <li class="collection-header"><h4>Actual Atoms</h4></li>
-	        <li class="collection-item" ng-repeat="atomo in atoms">
+	        <li class="collection-item" ng-repeat="atom in atoms">
 	        	<div >
-	        		{{atomo.shortName}}
-	        		<a href="#!" class="secondary-content" ng-click="addAtomToConclusion(atomo)">
+	        		{{atom.shortName}}
+	        		<a href="#!" class="secondary-content" ng-click="addAtomToConclusion(atom)">
 		        		<i class="material-icons">fast_forward</i>
 		        	</a>
-	        		<a href="#!" class="secondary-content" ng-click="addAtomToSentence(atomo)">
+	        		<a href="#!" class="secondary-content" ng-click="addAtomToSentence(atom)">
 		        		<i class="material-icons">fast_rewind</i>
 		        	</a>
 		        </div>

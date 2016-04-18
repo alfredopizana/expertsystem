@@ -3,14 +3,15 @@ app.config(['$routeProvider','$locationProvider',
 		$routeProvider
 			.when("/",{
 				templateUrl: "views/firstpartial.html",
-				controller:  "FirstpartialController"
+				controller:  "FirstPartialController"
 			})
 			.when("/firstpartial",{
 				templateUrl: "views/firstpartial.html",
-				controller:  "FirstpartialController"
+				controller:  "FirstPartialController"
 			})
 			.when("/secondpartial",{
 				templateUrl: "views/secondpartial.html",
+				controller:  "SecondPartialController"
 
 			})
 			.when("/thirdpartial",{

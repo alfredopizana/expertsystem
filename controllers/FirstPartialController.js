@@ -1,4 +1,4 @@
-app.controller("FirstpartialController",function($scope,localStorageService,defaultData,autoLoadData){	
+app.controller("FirstPartialController",function($scope,localStorageService,defaultData,autoLoadData){	
 	
 	//Load Data
 	$scope.atoms = autoLoadData.atoms();

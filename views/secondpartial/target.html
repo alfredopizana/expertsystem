@@ -1,0 +1,13 @@
+<h4>Objective</h4>
+<h5>Select an Atom</h5>
+<div class="row">
+	<div class="col s12" ng-init="selectedaAtom = 'C'">
+		<div  ng-repeat="atom in atomsInRules" ng-click="selectAtom(atom)" class="chip" style="cursor:pointer;" ng-class="{'blue':selectedAtom == atom.shortName }" >{{atom.shortName}}</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s12">
+		<div  ng-repeat="atom in normalizedRules" class="chip" >{{atom.shortName}} - {{!!atom.sign}}</div>
+	</div>
+</div>
