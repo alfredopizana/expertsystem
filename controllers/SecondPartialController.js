@@ -8,6 +8,9 @@ app.controller("SecondPartialController",function($scope,localStorageService,def
 	$scope.selectedAtom = {};
 	$scope.normalizedRules = [];
 
+	$scope.normalizedRulesForPositiveAtom = [];
+	$scope.normalizedRulesForNegativeAtom = [];
+
 	//Function to generated atoms from rules
 	$scope.obtainAtoms = function(){
 		angular.forEach($scope.rules,function(rule,key){
@@ -26,19 +29,29 @@ app.controller("SecondPartialController",function($scope,localStorageService,def
 	
 	$scope.selectAtom = function(object){
 		$scope.selectedAtom = object.shortName;
-		$scope.generateNormalizedRules();
+		object.sign = true;
+		console.log(object);
+		$scope.NormalizedRules = $scope.NormalizeRules($scope.normalizedRules);
+		$scope.NormalizedRules = $scope.generateNormalizedRules(object,$scope.rules);
+
+		splitNormalizedRules(object,$scope.rules); 
 	}
 
-	$scope.generateNormalizedRules = function(){
-		console.log("hello");
-		angular.forEach($scope.rules,function(rule,key){
+	$scope.NormalizeRules = function(rules){
+		var normalizedRules = [];
+
+		return normalizedRules;
+	}
+	function splitNormalizedRules(object,list){
+
+	}
+	$scope.generateNormalizedRules = function(object,rules){
+		angular.forEach(rules,function(rule,key){
 			//Check antecedents
 			angular.forEach(rule.antecedents,function(atom,iterator){
 				if(!arrayEvaluation.containsObjectWithArrayParameters({shortName:atom.shortName,sign:atom.sign},$scope.normalizedRules,["shortName","sign"]))
 				{
-
 					$scope.normalizedRules.push({shortName: atom.shortName,sign:atom.sign});
-
 				}
 			});
 			//Generate conclusions

@@ -13,12 +13,9 @@ app.factory('arrayEvaluation', function () {
 		    var x;
 		    var same_properties = true;
 		    for (x in listObject) {        
-
 		    		same_properties = true;
 		        	angular.forEach(properties,function(property,iterator){
-		        		console.log(listObject[x][property]);
-		        			same_properties = same_properties && (listObject[x][property] === obj[property]);
-		        			
+		        			same_properties = same_properties && (listObject[x][property] === obj[property]);	
 		        	}); 
 		        	if(same_properties)
 		        		return true;
